@@ -18,3 +18,5 @@ update_symlink '~/.vimrc', 'vim/vimrc'
 update_symlink '~/.vim', 'vim'
 
 update_symlink '~/.xmonad', 'xmonad'
+
+update_symlink '~/.oh-my-zsh', 'zsh/oh-my-zsh'
