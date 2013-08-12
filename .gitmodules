@@ -19,3 +19,6 @@
 [submodule "vim/bundle/indentguides"]
 	path = vim/bundle/indentguides
 	url = https://github.com/nathanaelkane/vim-indent-guides
+[submodule "vim/bundle/zenburn"]
+	path = vim/bundle/zenburn
+	url = https://github.com/jnurmine/Zenburn.git
