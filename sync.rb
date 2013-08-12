@@ -16,3 +16,5 @@ end
 
 update_symlink '~/.vimrc', 'vim/vimrc'
 update_symlink '~/.vim', 'vim'
+
+update_symlink '~/.xmonad', 'xmonad'
