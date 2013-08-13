@@ -1,0 +1,7 @@
+#include ".xrdb/look-zenburn.xrdb"
+#include ".xrdb/xterm.xrdb"
+
+Xcursor.theme: xcursor-industrial
+xterm*faceName: ProggyClean:pixelsize=12
+
+

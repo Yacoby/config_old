@@ -1,0 +1,12 @@
+[user]
+	name = Jacob Essex
+	email = jacob@freeagent.com
+[color]
+	ui = true
+[core]
+	excludesfile = /Users/jacob/.gitignore_global
+[push]
+	default = simple
+[diff]
+	algorithm = patience
+	context = 3

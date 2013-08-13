@@ -20,3 +20,11 @@ update_symlink '~/.vim', 'vim'
 update_symlink '~/.xmonad', 'xmonad'
 
 update_symlink '~/.oh-my-zsh', 'zsh/oh-my-zsh'
+update_symlink '~/.zshrc', 'zsh/.zshrc'
+
+update_symlink '~/.xmobarrc', 'xmobar/.xmobarrc'
+
+update_symlink '~/.gitconfig', 'git/.gitconfig'
+
+update_symlink '~/.xresources', 'x/.xresources'
+update_symlink '~/.xrdb', 'x/xrdb'
