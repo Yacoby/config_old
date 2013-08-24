@@ -16,8 +16,10 @@ set nocompatible "screw vi
 filetype plugin on
 set ofu=syntaxcomplete#Complete
 
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
+au FileType ruby setlocal shiftwidth=2 tabstop=2
+
 set expandtab
 
 set number " show line numbers
