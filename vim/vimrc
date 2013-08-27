@@ -100,6 +100,12 @@ let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_enable_on_vim_startup = 1
 
+" remap arrow keys to move around slips
+nnoremap <silent> <Right> <c-w>l
+nnoremap <silent> <Left> <c-w>h
+nnoremap <silent> <Up> <c-w>k
+nnoremap <silent> <Down> <c-w>j
+
 
 " Jump to the next or previous line that has the same level or a lower
 " level of indentation than the current line.
