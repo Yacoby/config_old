@@ -1,16 +1,15 @@
 require 'fileutils'
-require 'colored'
 
 def update_symlink(original_file, sym_target)
   original_file_path = File.expand_path original_file
   sym_target_path    = File.expand_path sym_target.to_s
 
   if File.exists? original_file_path
-    puts "Removing #{original_file_path}".yellow
+    puts "Removing #{original_file_path}"
     FileUtils.rm_rf original_file_path
   end
 
-  puts "Symlinking #{original_file_path} -> #{sym_target_path}".green
+  puts "Symlinking #{original_file_path} -> #{sym_target_path}"
   FileUtils.symlink sym_target_path, original_file_path
 end
 
