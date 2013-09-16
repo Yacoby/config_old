@@ -14,6 +14,11 @@ def update_symlink(original_file, sym_target)
   FileUtils.symlink sym_target_path, original_file_path
 end
 
+def ensure_directory(dependency)
+  dependency_path = File.expand_path dependency
+  Dir.mkdir dependency_path unless File.exists? dependency_path
+end
+
 update_symlink '~/.vimrc', 'vim/vimrc'
 update_symlink '~/.vim', 'vim'
 
@@ -28,3 +33,6 @@ update_symlink '~/.gitconfig', 'git/.gitconfig'
 
 update_symlink '~/.xresources', 'x/.xresources'
 update_symlink '~/.xrdb', 'x/xrdb'
+
+ensure_directory '~/.ssh'
+update_symlink '~/.ssh/config', 'ssh/config'
