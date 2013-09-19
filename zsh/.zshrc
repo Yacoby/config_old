@@ -70,3 +70,6 @@ alias todo='todo.sh'
 alias be='bundle exec'
 
 eval "$(rbenv init -)"
+
+# Start X at log in for my desktop
+[[ `hostname -s` = "ThinkingMachine" && -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
