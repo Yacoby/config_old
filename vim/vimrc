@@ -62,6 +62,9 @@ nnoremap <leader><space> :noh<cr> " remove search highlighting
 nnoremap <tab> %
 vnoremap <tab> %
 
+" make the md file extension markdown
+au BufRead,BufNewFile *.md set filetype=markdown
+
 " Change cursor shape in different modes on OS X
 if has("unix")
   let s:uname = system("uname")
