@@ -1,5 +1,6 @@
 #include "xrdb/look-zenburn.xrdb"
 #include "xrdb/xterm.xrdb"
+#include "xrdb/rxvt.xrdb"
 
 Xcursor.theme: xcursor-industrial
 xterm*faceName: DejaVu Sans Mono:pixelsize=12
