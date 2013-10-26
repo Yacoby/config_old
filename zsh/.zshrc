@@ -56,7 +56,6 @@ if [[ "$OSTYPE" == *linux* ]] then
   export TERM=xterm-256color
   alias ls='ls --color=auto'
 
-  alias pacman='pacman-color'
   alias yogurt='yaourt'
 fi
 
