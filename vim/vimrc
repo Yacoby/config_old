@@ -74,9 +74,9 @@ if has("unix")
   endif
 endif
 
-" enable 256 colours
-set t_Co=256
-:colorscheme zenburn
+set background=dark
+let g:solarized_termtrans=1
+colorscheme solarized
 
 
 " change autocomplete so that it works more like a 'standard' ide
