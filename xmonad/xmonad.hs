@@ -20,7 +20,7 @@ myManageHook = composeAll $
 
 -- | The available layouts.  Note that each layout is separated by |||, which
 -- denotes layout choice.
-layouts = tiled ||| Mirror tiled ||| Full ||| simpleCross ||| Grid
+layouts = tiled ||| Mirror tiled ||| noBorders Full ||| simpleCross ||| Grid
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -29,7 +29,7 @@ layouts = tiled ||| Mirror tiled ||| Full ||| simpleCross ||| Grid
      nmaster = 1
 
      -- Default proportion of screen occupied by master pane
-     ratio   = 2/3
+     ratio   = 1/2
 
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
@@ -38,7 +38,7 @@ main = do
     xmproc <- spawnPipe "xmobar"
     xmonad $ defaultConfig
         { manageHook = manageDocks <+> myManageHook <+> manageHook defaultConfig
-        , layoutHook = avoidStruts  $ layouts
+        , layoutHook = avoidStruts  $ lessBorders OtherIndicated$ layouts
         --, handleEventHook = fullscreenEventHook
 
 	    , startupHook = setWMName "LG3D"
