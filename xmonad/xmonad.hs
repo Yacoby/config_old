@@ -8,15 +8,37 @@ import System.IO
 
 import XMonad.Hooks.SetWMName
 
+import XMonad.Layout.Cross
+import XMonad.Layout.Grid
+import XMonad.Layout.Spacing
+import XMonad.Layout.Gaps
+import XMonad.Layout.NoBorders
+
 floatPrograms = ["Gimp","skype","Do", "Tilda"]
 myManageHook = composeAll $
     (className =? "Conky" --> doIgnore) : map (\name -> className =? name --> doFloat) floatPrograms 
+
+-- | The available layouts.  Note that each layout is separated by |||, which
+-- denotes layout choice.
+layouts = tiled ||| Mirror tiled ||| Full ||| simpleCross ||| Grid
+  where
+     -- default tiling algorithm partitions the screen into two panes
+     tiled   = Tall nmaster delta ratio
+
+     -- The default number of windows in the master pane
+     nmaster = 1
+
+     -- Default proportion of screen occupied by master pane
+     ratio   = 2/3
+
+     -- Percent of screen to increment by when resizing panes
+     delta   = 3/100
 
 main = do
     xmproc <- spawnPipe "xmobar"
     xmonad $ defaultConfig
         { manageHook = manageDocks <+> myManageHook <+> manageHook defaultConfig
-        , layoutHook = avoidStruts  $ layoutHook defaultConfig
+        , layoutHook = avoidStruts  $ layouts
         --, handleEventHook = fullscreenEventHook
 
 	    , startupHook = setWMName "LG3D"
