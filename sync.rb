@@ -18,7 +18,7 @@ def ensure_directory(dependency)
   Dir.mkdir dependency_path unless File.exists? dependency_path
 end
 
-update_symlink '~/.vimrc', 'vim/vimrc'
+update_symlink '~/.vimrc', 'vim/.vimrc'
 update_symlink '~/.vim', 'vim'
 
 update_symlink '~/.xmonad', 'xmonad'
