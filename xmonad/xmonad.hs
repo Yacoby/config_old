@@ -34,21 +34,26 @@ layouts = tiled ||| Mirror tiled ||| noBorders Full ||| simpleCross ||| Grid
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
 
+myNormalBorderColor  = "#1b1e1a"
+myFocusedBorderColor = "#545e63"
+
 main = do
     xmproc <- spawnPipe "xmobar"
-    xmonad $ defaultConfig
-        { manageHook = manageDocks <+> myManageHook <+> manageHook defaultConfig
-        , layoutHook = avoidStruts  $ lessBorders OtherIndicated$ layouts
-        --, handleEventHook = fullscreenEventHook
+    xmonad $ defaultConfig {
+        manageHook = manageDocks <+> myManageHook <+> manageHook defaultConfig,
+        layoutHook = avoidStruts  $ lessBorders OtherIndicated layouts,
+        --, handleEventHook = fullscreenEventHook,
+	    startupHook = setWMName "LG3D",
+        logHook = dynamicLogWithPP $ xmobarPP{
+                        ppOutput = hPutStrLn xmproc,
+                        ppTitle = xmobarColor "#859900" "" . shorten 50
+        },
+        modMask = mod4Mask,     -- Rebind Mod to the Windows key
+        terminal = "urxvt",
 
-	    , startupHook = setWMName "LG3D"
-        , logHook = dynamicLogWithPP $ xmobarPP
-                        { ppOutput = hPutStrLn xmproc
-                        , ppTitle = xmobarColor "green" "" . shorten 50
-                        }
-        , modMask = mod4Mask     -- Rebind Mod to the Windows key
-        , terminal = "urxvt"
-        } `additionalKeys` hotkeys
+        normalBorderColor  = myNormalBorderColor,
+        focusedBorderColor = myFocusedBorderColor
+    } `additionalKeys` hotkeys
 
 hotkeys = [
         ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock"),
