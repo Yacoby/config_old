@@ -1,3 +1,5 @@
+#! /usr/bin/env ruby
+
 require 'fileutils'
 
 def update_symlink(original_file, sym_target)
