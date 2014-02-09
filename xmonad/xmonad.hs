@@ -34,14 +34,11 @@ layouts = tiled ||| Mirror tiled ||| noBorders Full ||| simpleCross ||| Grid
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
 
-myNormalBorderColor  = "#1b1e1a"
-myFocusedBorderColor = "#545e63"
+myNormalBorderColor  = "#4e4e4e"
+myFocusedBorderColor = "#8a8a8a"
 
 myStartupHook :: X()
-myStartupHook = do
-    spawn "hsetroot -solid \"#002b36\""
-    spawn "trayer --align left --width 140 --widthtype pixel --edge top --height 10 --SetDockType true --SetPartialStrut false --margin 1140 --transparent true --alpha 255"
-    setWMName "LG3D"
+myStartupHook = setWMName "LG3D"
 
 main = do
     xmproc <- spawnPipe "xmobar"
