@@ -37,13 +37,19 @@ layouts = tiled ||| Mirror tiled ||| noBorders Full ||| simpleCross ||| Grid
 myNormalBorderColor  = "#1b1e1a"
 myFocusedBorderColor = "#545e63"
 
+myStartupHook :: X()
+myStartupHook = do
+    spawn "hsetroot -solid \"#002b36\""
+    spawn "trayer --align left --width 140 --widthtype pixel --edge top --height 10 --SetDockType true --SetPartialStrut false --margin 1140 --transparent true --alpha 255"
+    setWMName "LG3D"
+
 main = do
     xmproc <- spawnPipe "xmobar"
     xmonad $ defaultConfig {
         manageHook = manageDocks <+> myManageHook <+> manageHook defaultConfig,
         layoutHook = avoidStruts  $ lessBorders OtherIndicated layouts,
         --, handleEventHook = fullscreenEventHook,
-	    startupHook = setWMName "LG3D",
+	    startupHook = myStartupHook,
         logHook = dynamicLogWithPP $ xmobarPP{
                         ppOutput = hPutStrLn xmproc,
                         ppTitle = xmobarColor "#859900" "" . shorten 50
