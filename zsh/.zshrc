@@ -60,8 +60,11 @@ fi
 if [[ "$OSTYPE" == *linux* ]] then
   alias ls='ls --color=auto'
   alias yogurt='yaourt'
-  alias open='xdg-open'
+  function open {
+    (xdg-open $1 &)&
+  }
 fi
+
 
 alias tardis='ssh yacoby@ssh.tardis.ed.ac.uk'
 alias uni='ssh -X s1040340@student.ssh.inf.ed.ac.uk'
