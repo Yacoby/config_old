@@ -41,7 +41,7 @@ myStartupHook :: X()
 myStartupHook = setWMName "LG3D"
 
 main = do
-    xmproc <- spawnPipe "xmobar"
+    xmproc <- spawnPipe "xmobar -x 0"
     xmonad $ defaultConfig {
         manageHook = manageDocks <+> myManageHook <+> manageHook defaultConfig,
         layoutHook = avoidStruts  $ lessBorders OtherIndicated layouts,

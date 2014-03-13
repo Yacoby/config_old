@@ -61,7 +61,7 @@ if [[ "$OSTYPE" == *linux* ]] then
   alias ls='ls --color=auto'
   alias yogurt='yaourt'
   function open {
-    (xdg-open $1 &)&
+      ((xdg-open $1 &> /dev/null &)&)
   }
 fi
 
