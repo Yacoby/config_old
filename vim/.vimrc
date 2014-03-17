@@ -23,7 +23,7 @@ au FileType ruby setlocal shiftwidth=2 tabstop=2
 set expandtab
 
 set number " show line numbers
-set colorcolumn=80 " 80 width colum
+set colorcolumn=100
 
 set encoding=utf-8
 set scrolloff=5 "minmax lines to keep above/below the curson
