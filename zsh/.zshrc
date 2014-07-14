@@ -66,6 +66,9 @@ if [[ "$OSTYPE" == *linux* ]] then
 fi
 
 
+export PATH=$HOME/bin/:$PATH
+
+
 alias tardis='ssh yacoby@ssh.tardis.ed.ac.uk'
 alias uni='ssh -X s1040340@student.ssh.inf.ed.ac.uk'
 alias kazilar='ssh root@kazila.jacobessex.com'
