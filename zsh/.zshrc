@@ -43,12 +43,9 @@ export EDITOR='vim'
 #export PROMPT_COMMAND='RET=$?; if [[ $RET -eq 0 ]]; then echo -ne "\033[0;32m$RET\033[0m "; else echo -ne "\033[0;31m$RET\033[0m "; fi;'
 export PATH=$HOME/.gem/ruby/1.9.1/bin:$HOME/.gem/ruby/2.0.0/bin:$PATH
 
-if [[ "$OSTYPE" == *dawin* ]] then
-  export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
-
-  alias mysqlram='diskutil erasevolume HFS+ "ramdisk" `hdiutil attach -nomount ram://1048576` && cp -R /usr/local/mysql/data/* /Volumes/ramdisk/ && mysqld'
-  export PATH=$HOME/.homebrew/bin:$PATH
-  export PATH=/usr/local/mysql/bin:$PATH
+if [[ "$OSTYPE" == *darwin* ]] then
+  export PATH=/usr/local/bin:$PATH
+  export PATH=~/.cabal/bin:$PATH
 fi
 
 if [[ "$TERM" == *rxvt* ]] then 
