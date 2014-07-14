@@ -7,6 +7,8 @@ filetype plugin indent on
 syntax on
 set smartindent
 
+set spell
+
 " show unprintable chars
 set list
 set listchars=tab:»\ ,eol:¶,trail:·
