@@ -18,10 +18,11 @@ set nocompatible "screw vi
 filetype plugin on
 set ofu=syntaxcomplete#Complete
 
-set tabstop=4
-set shiftwidth=4
-au FileType ruby setlocal shiftwidth=2 tabstop=2
-au FileType python setlocal shiftwidth=2 tabstop=2 softtabstop=2
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+" au FileType ruby setlocal shiftwidth=2 tabstop=2
+" au FileType python setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 set expandtab
 
