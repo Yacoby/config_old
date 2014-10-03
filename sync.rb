@@ -28,6 +28,7 @@ use_ssh = false
 
 use_vim = true
 use_zsh = true
+use_tmux = true
 
 OptionParser.new do |o|
   o.on('--git') { use_git= true }
@@ -37,15 +38,20 @@ OptionParser.new do |o|
 
   o.on('--novim') { use_vim = false }
   o.on('--nozsh') { use_zsh = false }
+  o.on('--notmux') { use_tmux = false }
   o.parse!
 end
 
-if !no_vim
+if use_vim
   update_symlink '~/.vimrc', 'vim/.vimrc'
   update_symlink '~/.vim', 'vim'
 end
 
-if !no_zsh
+if use_tmux
+  update_symlink '~/.tmux.conf', 'tmux/.tmux.conf'
+end
+
+if use_zsh
   update_symlink '~/.oh-my-zsh', 'zsh/oh-my-zsh'
   update_symlink '~/.zshrc', 'zsh/.zshrc'
 end
