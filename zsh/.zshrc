@@ -41,7 +41,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
 #export PS1='\A [\u@\h \W]\$ '
 #export PROMPT_COMMAND='RET=$?; if [[ $RET -eq 0 ]]; then echo -ne "\033[0;32m$RET\033[0m "; else echo -ne "\033[0;31m$RET\033[0m "; fi;'
-export PATH=$HOME/.gem/ruby/1.9.1/bin:$HOME/.gem/ruby/2.0.0/bin:$PATH
+export PATH=$HOME/.gem/ruby/1.9.1/bin:$HOME/.gem/ruby/2.0.0/bin:$HOME/.rbenv/bin:$PATH
 
 if [[ "$OSTYPE" == *darwin* ]] then
   export PATH=/usr/local/bin:$PATH
