@@ -52,7 +52,7 @@ main = do
                         ppTitle = xmobarColor "#859900" "" . shorten 50
         },
         modMask = mod4Mask,     -- Rebind Mod to the Windows key
-        terminal = "urxvt",
+        terminal = "gnome-terminal",
 
         normalBorderColor  = myNormalBorderColor,
         focusedBorderColor = myFocusedBorderColor
