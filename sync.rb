@@ -42,6 +42,15 @@ OptionParser.new do |o|
   o.parse!
 end
 
+`git submodule init`
+`git submodule foreach git checkout master`
+`git submodule foreach git pull`
+
+
+ensure_directory File.expand_path(File.join(File.dirname(__FILE__), 'zsh', 'oh-my-zsh', 'custom', 'themes'))
+update_symlink File.expand_path(File.join(File.dirname(__FILE__), 'zsh', 'oh-my-zsh', 'custom', 'themes', 'yacoby.zsh-theme')),
+               File.join('zsh', 'yacoby.zsh-theme')
+
 if use_vim
   update_symlink '~/.vimrc', 'vim/.vimrc'
   update_symlink '~/.vim', 'vim'
