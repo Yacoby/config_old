@@ -59,7 +59,6 @@ set wildignore+=*.pyc,*/env/*     " MacOSX/Linux
 set mouse=a " allow mice control
 
 set clipboard=unnamed " avoid the faf for copy/paste
-set lazyredraw
 
 " avoid the delay exiting insert mode
 au InsertEnter * set timeoutlen=0
