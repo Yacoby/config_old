@@ -23,9 +23,9 @@ set shiftwidth=2
 set softtabstop=2
 
 function! SetupPython()
-    set softtabstop=2
-    set tabstop=2
-    set shiftwidth=2
+    set softtabstop=4
+    set tabstop=4
+    set shiftwidth=4
 endfunction
 
 set expandtab
@@ -118,7 +118,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 " syntastic
 let g:syntastic_javascript_checkers=['jshint', 'jslint']
 let g:syntastic_ruby_checkers=['mri', 'rubocop']
-let g:syntastic_python_checkers=['python', 'pyflakes', 'pylint']
+let g:syntastic_python_checkers=['python', 'pyflakes', 'flake8']
 
 " remap arrow keys to move around slips
 nnoremap <silent> <Right> <c-w>l
