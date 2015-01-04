@@ -43,3 +43,9 @@
 [submodule "vim/bundle/rbenv"]
 	path = vim/bundle/rbenv
 	url = https://github.com/tpope/vim-rbenv.git
+[submodule "vim/bundle/vim-obsession"]
+	path = vim/bundle/vim-obsession
+	url = git://github.com/tpope/vim-obsession.git
+[submodule "tmux/plugins/tmux-resurrect"]
+	path = tmux/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect
